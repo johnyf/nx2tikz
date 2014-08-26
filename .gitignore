@@ -1,0 +1,8 @@
+.DS_Store
+*.pdf
+*.png
+*.aux
+*.log
+*.pyc
+*.egg-info
+
