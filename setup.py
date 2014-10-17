@@ -1,15 +1,14 @@
 # -*- coding: utf-8 -*-
 
-import os
 from setuptools import setup
+import warnings
 
-if os.path.exists('README.txt'):
-    long_description = open('README.txt').read()
-elif os.path.exists('README.md'):
-    long_description=open('README.md').read()
-else:
-    print('Could not find readme from which to extract long_description.')
-    long_description = ''
+README = 'README.md'
+
+try:
+    long_description = open('README.md').read()
+except:
+    warnings.warn('Could not find {readme}'.format(readme=README))
 
 setup(
     name='nx2tikz',
@@ -21,9 +20,7 @@ setup(
     author='Ioannis Filippidis',
     author_email='jfilippidis@gmail.com',
     url = 'https://github.com/johnyf/nx2tikz',
-    #download_url = 'https://github.com/johnyf/pycflow2dot/archive/v0.2.tar.gz',
     install_requires=['networkx'],
-    keywords = ['tikz', 'pgf', 'networkx', 'tex', 'latex', 'graph',
-                'dot'],
+    keywords = ['tikz', 'pgf', 'networkx', 'tex', 'latex', 'graph'],
     classifiers = [],
 )
