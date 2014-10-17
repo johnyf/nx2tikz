@@ -86,7 +86,7 @@ def dumps_tikz(g, preamble=True, layout='layered'):
     return document
 
 def write_tikz(g, fname, preamble=True):
-    f = open(fname)
+    f = open(fname, 'w')
     f.write(dumps_tikz(g))
     f.close()
 
