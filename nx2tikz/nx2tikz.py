@@ -9,7 +9,7 @@ import argparse
 import subprocess
 from networkx import is_directed, Graph
 
-def dumps_tikz(g, preamble=True, layout='layered'):
+def dumps_tikz(g, preamble=True, layout='layered', use_label=True):
     if layout not in {'layered','spring'}:
         raise ValueError('Unknown layout: ' + str(layout))
     
@@ -35,8 +35,12 @@ def dumps_tikz(g, preamble=True, layout='layered'):
         line = ' -- '
     
     for u, v, d in g.edges_iter(data=True):
-        label = d.get('label', '')
-        color = d.get('color', '')
+        if use_label:
+            label = d.get('label', '')
+            color = d.get('color', '')
+        else:
+            label = str(d)
+            color = ''
         
         if label:
             label = '"' + label + '"\' above'
@@ -90,11 +94,11 @@ def write_tikz(g, fname, preamble=True):
     f.write(dumps_tikz(g))
     f.close()
 
-def write_pdf(g, fname):
+def write_pdf(g, fname, use_label=True):
     opt = ['lualatex', '--jobname', fname]
     p = subprocess.Popen(opt, stdin=subprocess.PIPE)
     
-    p.stdin.write(dumps_tikz(g, preamble=True))
+    p.stdin.write(dumps_tikz(g, preamble=True, use_label=use_label))
     p.stdin.close()
     p.wait()
 
