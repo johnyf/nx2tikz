@@ -1,8 +1,11 @@
 .DS_Store
+build/*
 *.pdf
 *.png
 *.aux
 *.log
 *.pyc
 *.egg-info
+*.swp
+*.egg
 
