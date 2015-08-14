@@ -88,25 +88,6 @@ def dump_pdf(g, fname, use_label=True):
     p.wait()
 
 if __name__ == '__main__':
-    g = Graph()
-    # nodes
-    g.add_node(1, label='$a$', color='yellow', shape='ellipse')
-    g.add_node(2, label='$b$', color='blue', fill='orange', shape='circle')
-    g.add_node(3, label='$c$', shape='rectangle')
-    g.add_node(4, label='$E=mc^2$')
-    g.add_node(5, label=r'$\begin{bmatrix} x_1\\ x_2\\ x_3\end{bmatrix}$')
-    # edges
-    g.add_edge(1, 2, label='$\{p\}$')
-    g.add_edge(1, 3, label='$\{a,b\}$', color='purple')
-    g.add_edge(3, 4, label=r'$\begin{matrix} x=1\\ y=2\\ z=10 \end{matrix}$')
-    g.add_edge(4, 5)
-    g.add_edge(5, 4, color='red')
-    g.add_edge(2, 2, color='blue')
-    g.add_edge(4, 1)
-    desc = 'Convert a NetworkX graph to TikZ.'
-    parser = argparse.ArgumentParser(prog='nx2tikz', description=desc)
-    parser.add_argument('--format', '-f', help='output format',
-                        choices={'pdf', 'tikz'}, default='pdf')
     opts = parser.parse_args()
     if opts.format == 'pdf':
         write_pdf(g, 'hehe')
