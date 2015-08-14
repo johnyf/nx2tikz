@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from setuptools import setup
 import warnings
 
@@ -24,5 +23,8 @@ if __name__ == '__main__':
         install_requires=['networkx'],
         packages=[name],
         package_dir={name: name},
+        entry_points={
+            'console_scripts':
+                ['nx2tikz = nx2tikz.nx2tikz:command_line']},
         keywords=['tikz', 'pgf', 'networkx', 'tex', 'latex', 'graph'],
         classifiers=[])
