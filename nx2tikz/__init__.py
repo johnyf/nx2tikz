@@ -1,1 +1,1 @@
-from .nx2tikz import dumps_tikz, write_tikz, write_pdf
+from .nx2tikz import dumps_tikz, dump_tikz, dump_pdf

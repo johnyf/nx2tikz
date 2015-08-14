@@ -72,16 +72,17 @@ def dumps_tikz(g, preamble=True, layout='layered', use_label=True):
     return document
 
 
-def write_tikz(g, fname, preamble=True):
-    f = open(fname, 'w')
-    f.write(dumps_tikz(g))
-    f.close()
+def dump_tikz(g, fname):
+    """Write TikZ picture as TeX file."""
+    s = dumps_tikz(g)
+    with open(fname, 'w') as f:
+        f.write(s)
 
 
-def write_pdf(g, fname, use_label=True):
+
+def dump_pdf(g, fname, use_label=True):
     opt = ['lualatex', '--jobname', fname]
     p = subprocess.Popen(opt, stdin=subprocess.PIPE)
-    s = dumps_tikz(g, preamble=True, use_label=use_label)
     p.stdin.write(s)
     p.stdin.close()
     p.wait()
