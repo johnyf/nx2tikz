@@ -108,7 +108,9 @@ def dump_pdf(g, fname, use_label=True):
     s = _document(g, layout='layered', use_label=use_label)
     # typeset
     opt = ['lualatex', '--jobname', fname]
-    p = subprocess.Popen(opt, stdin=subprocess.PIPE)
+    p = subprocess.Popen(opt,
+        stdin=subprocess.PIPE,
+        universal_newlines=True)
     p.stdin.write(s)
     p.stdin.close()
     p.wait()
