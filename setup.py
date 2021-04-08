@@ -26,7 +26,7 @@ classifiers = [
 if __name__ == '__main__':
     setup(
         name=name,
-        version='0.1.0',
+        version='0.2.0',
         license='BSD',
         description='Export NetworkX graphs to TikZ.',
         long_description=long_description,
