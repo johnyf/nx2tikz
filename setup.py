@@ -5,11 +5,19 @@ import warnings
 
 README = 'README.md'
 name = 'nx2tikz'
+description = 'Export NetworkX graphs to TikZ.'
 try:
     long_description = open('README.md').read()
 except FileNotFoundError:
     long_description = ''
     warnings.warn('Could not find {readme}'.format(readme=README))
+url = 'https://github.com/johnyf/{name}'.format(name=name)
+MAJOR = 0
+MINOR = 2
+MICRO = 0
+VERSION = '{major}.{minor}.{micro}'.format(
+    major=MAJOR, minor=MINOR, micro=MICRO)
+install_requires = ['networkx']
 classifiers = [
     'Development Status :: 2 - Pre-Alpha',
     'Intended Audience :: Developers',
@@ -31,14 +39,14 @@ classifiers = [
 def run_setup():
     setup(
         name=name,
-        version='0.2.0',
+        version=VERSION,
         license='BSD',
-        description='Export NetworkX graphs to TikZ.',
+        description=description,
         long_description=long_description,
         author='Ioannis Filippidis',
         author_email='jfilippidis@gmail.com',
-        url='https://github.com/johnyf/nx2tikz',
-        install_requires=['networkx'],
+        url=url,
+        install_requires=install_requires,
         packages=[name],
         package_dir={name: name},
         entry_points={
