@@ -1,5 +1,6 @@
 .DS_Store
 build/*
+nx2tikz/_version.py
 *.pdf
 *.png
 *.aux
@@ -8,4 +9,3 @@ build/*
 *.egg-info
 *.swp
 *.egg
-
