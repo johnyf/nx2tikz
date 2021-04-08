@@ -8,6 +8,7 @@ name = 'nx2tikz'
 try:
     long_description = open('README.md').read()
 except:
+    long_description = ''
     warnings.warn('Could not find {readme}'.format(readme=README))
 classifiers = [
     'Development Status :: 2 - Pre-Alpha',
