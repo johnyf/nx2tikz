@@ -20,7 +20,7 @@ if __name__ == '__main__':
         author='Ioannis Filippidis',
         author_email='jfilippidis@gmail.com',
         url='https://github.com/johnyf/nx2tikz',
-        install_requires=['networkx'],
+        install_requires=['networkx < 2.0.0'],
         packages=[name],
         package_dir={name: name},
         entry_points={
