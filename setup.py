@@ -43,5 +43,7 @@ if __name__ == '__main__':
         entry_points={
             'console_scripts':
                 ['nx2tikz = nx2tikz.nx2tikz:command_line']},
-        keywords=['tikz', 'pgf', 'networkx', 'tex', 'latex', 'graph'],
+        keywords=[
+            'tikz', 'pgf', 'networkx', 'tex', 'latex', 'luatex',
+            'lualatex', 'graph'],
         classifiers=classifiers)
