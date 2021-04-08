@@ -27,7 +27,7 @@ classifiers = [
     'Topic :: Text Processing :: Markup :: LaTeX']
 
 
-if __name__ == '__main__':
+def run_setup():
     setup(
         name=name,
         version='0.2.0',
@@ -47,3 +47,7 @@ if __name__ == '__main__':
             'tikz', 'pgf', 'networkx', 'tex', 'latex', 'luatex',
             'lualatex', 'graph'],
         classifiers=classifiers)
+
+
+if __name__ == '__main__':
+    run_setup()
