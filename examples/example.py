@@ -1,3 +1,24 @@
+"""Dump file containing TikZ code for drawing an example graph.
+
+Alternatively, `nx2tikz` can be called from the command line,
+and this script passed as argument:
+
+```python
+nx2tikz --input example.py --output out.tex --format tikz
+```
+
+or
+
+```python
+nx2tikz --input example.py --output out --format pdf
+```
+
+or
+
+```python
+nx2tikz --input example.py --output out --format tex
+```
+"""
 import networkx as nx
 import nx2tikz
 
