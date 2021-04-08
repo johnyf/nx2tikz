@@ -65,12 +65,12 @@ def _preamble(layout='layered'):
             'Unknown which library contains layout: {s}'.format(s=layout))
     document = (
         '\documentclass{{standalone}}\n'
-        '\usepackage{{amsmath}}\n'
+        '\\usepackage{{amsmath}}\n'
         '\n'
-        '\usepackage{{tikz}}\n'
-        '\usetikzlibrary{{graphs,graphs.standard,'
+        '\\usepackage{{tikz}}\n'
+        '\\usetikzlibrary{{graphs,graphs.standard,'
         'graphdrawing,quotes,shapes}}\n'
-        '\usegdlibrary{{ {layout_lib} }}\n').format(
+        '\\usegdlibrary{{ {layout_lib} }}\n').format(
             layout_lib=layout_lib)
     return document
 
