@@ -35,6 +35,8 @@ Use `setuptools`:
 python setup.py install
 ```
 
+If you are using Python 2, then install `networkx <= 2.2`,
+because newer `networkx` versions support only Python 3.
 the package can be imported, or invoked from the command line as `nx2tikz` (creates an [entry point](https://pythonhosted.org/setuptools/setuptools.html#id8)).
 
 
