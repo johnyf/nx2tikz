@@ -12,11 +12,15 @@ except FileNotFoundError:
     long_description = ''
     warnings.warn('Could not find {readme}'.format(readme=README))
 url = 'https://github.com/johnyf/{name}'.format(name=name)
+VERSION_FILE = '{name}/_version.py'.format(name=name)
 MAJOR = 0
 MINOR = 2
 MICRO = 0
 VERSION = '{major}.{minor}.{micro}'.format(
     major=MAJOR, minor=MINOR, micro=MICRO)
+VERSION_TEXT = (
+    '# This file was generated from setup.py\n'
+    "version = '{version}'\n")
 install_requires = ['networkx']
 classifiers = [
     'Development Status :: 2 - Pre-Alpha',
@@ -37,6 +41,9 @@ classifiers = [
 
 
 def run_setup():
+    s = VERSION_TEXT.format(version=VERSION)
+    with open(VERSION_FILE, 'w') as f:
+        f.write(s)
     setup(
         name=name,
         version=VERSION,
