@@ -1,3 +1,4 @@
+"""Installation script."""
 from setuptools import setup
 import warnings
 
