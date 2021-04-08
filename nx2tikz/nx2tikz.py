@@ -11,7 +11,7 @@ def dumps_tikz(g, layout='layered', use_label=True):
     s = ''
     for n, d in g.nodes(data=True):
         # label
-        label = g.node[n].get('label', '')
+        label = d.get('label', '')
         label = 'as={' + label + '}' if label else ''
         # geometry
         color = d.get('color', '')
