@@ -1,6 +1,7 @@
 """Export NetworkX graphs to TikZ graphs with automatic layout."""
 import argparse
 import subprocess
+
 from networkx import is_directed
 
 
