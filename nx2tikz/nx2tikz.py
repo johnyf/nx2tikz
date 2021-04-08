@@ -9,7 +9,7 @@ def dumps_tikz(g, layout='layered', use_label=True):
     if layout not in ('layered', 'spring'):
         raise ValueError('Unknown layout: {s}'.format(s=layout))
     s = ''
-    for n, d in g.nodes_iter(data=True):
+    for n, d in g.nodes(data=True):
         # label
         label = g.node[n].get('label', '')
         label = 'as={' + label + '}' if label else ''
@@ -27,7 +27,7 @@ def dumps_tikz(g, layout='layered', use_label=True):
         line = ' -> '
     else:
         line = ' -- '
-    for u, v, d in g.edges_iter(data=True):
+    for u, v, d in g.edges(data=True):
         if use_label:
             label = d.get('label', '')
             color = d.get('color', '')
