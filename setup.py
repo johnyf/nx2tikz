@@ -7,7 +7,7 @@ README = 'README.md'
 name = 'nx2tikz'
 try:
     long_description = open('README.md').read()
-except:
+except FileNotFoundError:
     long_description = ''
     warnings.warn('Could not find {readme}'.format(readme=README))
 classifiers = [
