@@ -1,0 +1,51 @@
+---
+# configuration for GitHub Actions
+name: tests
+on:
+    push:
+    pull_request:
+    schedule:
+        - cron: '30 5 5 * *'
+jobs:
+    build:
+        name: Build
+        runs-on: ubuntu-20.04
+        strategy:
+            matrix:
+                python-version: [
+                    '3.9',
+                    '3.10',
+                    ]
+        steps:
+            - uses: actions/checkout@v2
+            - name: Install APT packages
+              run: |
+                sudo apt install \
+                    texlive \
+                    texlive-latex-extra \
+                    texlive-luatex \
+                    texlive-pictures
+            - name: Display version of `lualatex`
+              run: |
+                lualatex --version
+            - name: Set up Python ${{ matrix.python-version }}
+              uses: actions/setup-python@v2
+              with:
+                  python-version: ${{ matrix.python-version }}
+            - name: Update Python environment
+              run: |
+                pip install --upgrade pip setuptools
+            - name: Package `nx2tikz`
+              run: |
+                python setup.py sdist
+            - name: Install `nx2tikz`
+              run: |
+                pip install dist/nx2tikz-*.tar.gz
+            - name: Run `nx2tikz` tests
+              run: |
+                set -o posix
+                echo "Exported environment variables:"
+                export -p
+                cd tests/
+                # run tests
+                make all
