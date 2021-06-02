@@ -22,6 +22,8 @@ VERSION = '{major}.{minor}.{micro}'.format(
 VERSION_TEXT = (
     '# This file was generated from setup.py\n'
     "version = '{version}'\n")
+PYTHON_REQUIRES = (
+    '>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*, !=3.6.*')
 install_requires = ['networkx']
 classifiers = [
     'Development Status :: 2 - Pre-Alpha',
@@ -54,6 +56,7 @@ def run_setup():
         author='Ioannis Filippidis',
         author_email='jfilippidis@gmail.com',
         url=url,
+        python_requires=PYTHON_REQUIRES,
         install_requires=install_requires,
         packages=[name],
         package_dir={name: name},
