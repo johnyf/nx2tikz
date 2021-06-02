@@ -41,8 +41,8 @@ def graph():
     g.add_node(4, label='$E=mc^2$')
     g.add_node(5, label=r'$\begin{bmatrix} x_1\\ x_2\\ x_3\end{bmatrix}$')
     # edges
-    g.add_edge(1, 2, label='$\{p\}$')
-    g.add_edge(1, 3, label='$\{a,b\}$', color='purple')
+    g.add_edge(1, 2, label=r'$\{p\}$')
+    g.add_edge(1, 3, label=r'$\{a,b\}$', color='purple')
     g.add_edge(3, 4, label=r'$\begin{matrix} x=1\\ y=2\\ z=10 \end{matrix}$')
     g.add_edge(4, 5)
     g.add_edge(5, 4, color='red')

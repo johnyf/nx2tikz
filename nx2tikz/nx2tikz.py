@@ -43,13 +43,13 @@ def dumps_tikz(g, layout='layered', use_label=True):
         s += str(u) + line + style + str(v) + ';\n'
     tikzpicture = (
         r'\begin{{tikzpicture}}' '\n'
-        '\graph[{layout} layout, sibling distance=5.0cm,'
+        r'\graph[{layout} layout, sibling distance=5.0cm,'
         # 'edge quotes mid,'
         'edges={{nodes={{ sloped, inner sep=10pt }} }},'
         'nodes={{circle, draw}} ]{{\n'
         '{s}'
         '}};\n'
-        '\end{{tikzpicture}}\n').format(
+        r'\end{{tikzpicture}}' '\n').format(
             layout=layout,
             s=s)
     return tikzpicture
@@ -65,7 +65,7 @@ def _preamble(layout='layered'):
         raise ValueError(
             'Unknown which library contains layout: {s}'.format(s=layout))
     document = (
-        '\documentclass{{standalone}}\n'
+        '\\documentclass{{standalone}}\n'
         '\\usepackage{{amsmath}}\n'
         '\n'
         '\\usepackage{{tikz}}\n'
@@ -85,7 +85,7 @@ def _document(g, layout, use_label):
         r'\begin{{document}}' '\n'
         '\n'
         '{tikz}'
-        '\end{{document}}\n').format(
+        '\\end{{document}}\n').format(
             preamble=preamble,
             tikz=tikz)
 
