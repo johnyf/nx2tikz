@@ -1,9 +1,9 @@
 About
 =====
 
-`nx2tikz` is a package for exporting [`networkx`](https://networkx.github.io/)
+`nx2tikz` is a package for exporting [`networkx`](https://networkx.org)
 graphs directly to [`TikZ`](https://en.wikipedia.org/wiki/PGF/TikZ), letting
-[`TikZ` itself layout the graph](http://dx.doi.org/10.7155/jgaa.00301).
+[`TikZ` itself layout the graph](https://doi.org/10.7155/jgaa.00301).
 The generated TikZ code can be typeset using [LuaTeX](
     https://en.wikipedia.org/wiki/LuaTeX).
 The package can be used to convert a `networkx` graph to:
@@ -20,7 +20,7 @@ These are possible via two interfaces:
   a function that returns a `networkx` graph
 
 The purpose of package `nx2tikz` is to avoid the
-[`pydot`](https://code.google.com/p/pydot/) ->
+[`pydot`](https://pypi.org/project/pydot/) ->
 [`GraphViz`](https://en.wikipedia.org/wiki/PGF/TikZ) ->
 [`dot2tex`](https://github.com/kjellmf/dot2tex) ->
 [`dot2texi`](https://github.com/kjellmf/dot2texisty) toolchain,
@@ -98,7 +98,7 @@ An example for using `nx2tikz` is the Python script `examples/example.py`.
 Installation
 ============
 
-Using [`pip`](https://pip.pypa.io/):
+Using [`pip`](https://pip.pypa.io):
 
 ```shell
 pip install .
@@ -121,18 +121,18 @@ References
 ==========
 
 [1] Jannis Pohlmann
-    [Configurable graph drawing algorithms for the TikZ graphics description language](http://www.tcs.uni-luebeck.de/downloads/papers/2011/2011-configurable-graph-drawing-algorithms-jannis-pohlmann.pdf)
+    [Configurable graph drawing algorithms for the TikZ graphics description language](https://www.tcs.uni-luebeck.de/downloads/papers/2011/2011-configurable-graph-drawing-algorithms-jannis-pohlmann.pdf)
     Diplomarbeit, Universitat zu Lubeck, 2011
 
 [2] Till Tantau
-    [Graph drawing in TikZ](http://www.emis.de/journals/JGAA/accepted/2013/Tantau2013.17.4.pdf)
+    [Graph drawing in TikZ](https://www.emis.de/journals/JGAA/accepted/2013/Tantau2013.17.4.pdf)
     Journal of graph algorithms and applications
     Vol.17, No.4, pp.495--513, 2013
-    [DOI:10.7155/jgaa.00301](http://dx.doi.org/10.7155/jgaa.00301)
-    [slides](http://www.tcs.uni-luebeck.de/downloads/mitarbeiter/tantau/2012-gd-presentation.pdf)
+    [DOI:10.7155/jgaa.00301](https://doi.org/10.7155/jgaa.00301)
+    [slides](https://www.tcs.uni-luebeck.de/downloads/mitarbeiter/tantau/2012-gd-presentation.pdf)
 
 
 License
 =======
 
-[BSD-3](http://opensource.org/licenses/BSD-3-Clause), see `LICENSE` file.
+[BSD-3](https://opensource.org/licenses/BSD-3-Clause), see `LICENSE` file.
