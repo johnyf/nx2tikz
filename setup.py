@@ -7,7 +7,8 @@ README = 'README.md'
 name = 'nx2tikz'
 description = 'Export NetworkX graphs to TikZ.'
 try:
-    long_description = open('README.md').read()
+    with open('README.md') as f:
+        long_description = f.read()
 except FileNotFoundError:
     long_description = ''
     warnings.warn('Could not find {readme}'.format(readme=README))
