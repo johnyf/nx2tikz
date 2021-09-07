@@ -7,7 +7,7 @@ import subprocess
 def dumps_tikz(g, layout='layered', use_label=True):
     """Return TikZ code as `str` for `networkx` graph `g`."""
     if layout not in ('layered', 'spring'):
-        raise ValueError('Unknown layout: {s}'.format(s=layout))
+        raise ValueError(f'Unknown layout: {layout}')
     s = ''
     for n, d in g.nodes(data=True):
         # label
@@ -21,7 +21,7 @@ def dumps_tikz(g, layout='layered', use_label=True):
         style = ', '.join(filter(None, [label, color, fill, shape]))
         style = '[' + style + ']' if style else ''
         # pack them
-        s += '{n}{style};\n'.format(n=n, style=style)
+        s += f'{n}{style};\n'
     s += '\n'
     if g.is_directed():
         line = ' -> '
@@ -41,16 +41,14 @@ def dumps_tikz(g, layout='layered', use_label=True):
         style = ' [' + style + '] ' if style else ''
         s += str(u) + line + style + str(v) + ';\n'
     tikzpicture = (
-        r'\begin{{tikzpicture}}' '\n'
-        r'\graph[{layout} layout, sibling distance=5.0cm,'
+        r'\begin{tikzpicture}' '\n'
+        rf'\graph[{layout} layout, sibling distance=5.0cm,'
         # 'edge quotes mid,'
-        'edges={{nodes={{ sloped, inner sep=10pt }} }},'
-        'nodes={{circle, draw}} ]{{\n'
-        '{s}'
-        '}};\n'
-        r'\end{{tikzpicture}}' '\n').format(
-            layout=layout,
-            s=s)
+        'edges={nodes={sloped, inner sep=10pt}},'
+        'nodes={circle, draw} ]{\n'
+        f'{s}'
+        '};\n'
+        r'\end{tikzpicture}' '\n')
     return tikzpicture
 
 
@@ -62,16 +60,15 @@ def _preamble(layout='layered'):
         layout_lib = 'force'
     else:
         raise ValueError(
-            'Unknown which library contains layout: {s}'.format(s=layout))
+            f'Unknown which library contains layout: {layout}')
     document = (
-        '\\documentclass{{standalone}}\n'
-        '\\usepackage{{amsmath}}\n'
+        r'\documentclass{standalone}' '\n'
+        r'\usepackage{amsmath}' '\n'
         '\n'
-        '\\usepackage{{tikz}}\n'
-        '\\usetikzlibrary{{graphs,graphs.standard,'
-        'graphdrawing,quotes,shapes}}\n'
-        '\\usegdlibrary{{ {layout_lib} }}\n').format(
-            layout_lib=layout_lib)
+        r'\usepackage{tikz}' '\n'
+        r'\usetikzlibrary{graphs,graphs.standard,'
+        'graphdrawing,quotes,shapes}\n'
+        r'\usegdlibrary{' f'{layout_lib}' '}\n')
     return document
 
 
@@ -80,13 +77,11 @@ def _document(g, layout, use_label):
     tikz = dumps_tikz(g, layout, use_label=use_label)
     preamble = _preamble(layout)
     return (
-        '{preamble}\n'
-        r'\begin{{document}}' '\n'
+        f'{preamble}\n'
+        r'\begin{document}' '\n'
         '\n'
-        '{tikz}'
-        '\\end{{document}}\n').format(
-            preamble=preamble,
-            tikz=tikz)
+        f'{tikz}'
+        r'\end{document}' '\n')
 
 
 def dump_tikz(g, fname):
@@ -149,12 +144,12 @@ def command_line():
             exec(f.read(), module)
     except ImportError:
         raise ImportError(
-            'could not find module `{m}`'.format(m=in_fname))
+            f'could not find module `{in_fname}`')
     try:
         g = module['graph']()
     except AttributeError:
-        raise AttributeError('could not call function `{m}.graph`'.format(
-            m=in_fname))
+        raise AttributeError(
+            f'could not call function `{in_fname}.graph`')
     # write output
     if out_format == 'pdf':
         dump_pdf(g, out_fname)
@@ -164,7 +159,7 @@ def command_line():
         dump_tikz(g, out_fname)
     else:
         raise Exception(
-            'Unknow output format: {f}'.format(f=opts.format))
+            f'Unknow output format: {out_format}')
 
 
 if __name__ == '__main__':

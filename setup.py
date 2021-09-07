@@ -11,14 +11,13 @@ try:
         long_description = f.read()
 except FileNotFoundError:
     long_description = ''
-    warnings.warn('Could not find {readme}'.format(readme=README))
+    warnings.warn(f'Could not find {README}')
 url = f'https://github.com/johnyf/{NAME}'
 VERSION_FILE = f'{NAME}/_version.py'
 MAJOR = 0
 MINOR = 2
 MICRO = 0
-VERSION = '{major}.{minor}.{micro}'.format(
-    major=MAJOR, minor=MINOR, micro=MICRO)
+VERSION = f'{MAJOR}.{MINOR}.{MICRO}'
 VERSION_TEXT = (
     '# This file was generated from setup.py\n'
     "version = '{version}'\n")
