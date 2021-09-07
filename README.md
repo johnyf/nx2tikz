@@ -114,16 +114,17 @@ nx2tikz -h
 ```
 
 
-
 References
 ==========
 
 [1] Jannis Pohlmann
-    [Configurable graph drawing algorithms for the TikZ graphics description language](https://www.tcs.uni-luebeck.de/downloads/papers/2011/2011-configurable-graph-drawing-algorithms-jannis-pohlmann.pdf)
+    [Configurable graph drawing algorithms for the TikZ graphics description language](
+        https://www.tcs.uni-luebeck.de/downloads/papers/2011/2011-configurable-graph-drawing-algorithms-jannis-pohlmann.pdf)
     Diplomarbeit, Universitat zu Lubeck, 2011
 
 [2] Till Tantau
-    [Graph drawing in TikZ](https://www.emis.de/journals/JGAA/accepted/2013/Tantau2013.17.4.pdf)
+    [Graph drawing in TikZ](
+        https://www.emis.de/journals/JGAA/accepted/2013/Tantau2013.17.4.pdf)
     Journal of graph algorithms and applications
     Vol.17, No.4, pp.495--513, 2013
     [DOI:10.7155/jgaa.00301](https://doi.org/10.7155/jgaa.00301)
