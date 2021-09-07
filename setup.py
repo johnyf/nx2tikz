@@ -22,8 +22,7 @@ VERSION = '{major}.{minor}.{micro}'.format(
 VERSION_TEXT = (
     '# This file was generated from setup.py\n'
     "version = '{version}'\n")
-PYTHON_REQUIRES = (
-    '>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*, !=3.6.*')
+PYTHON_REQUIRES = '>=3.9'
 install_requires = ['networkx']
 classifiers = [
     'Development Status :: 2 - Pre-Alpha',
@@ -32,11 +31,7 @@ classifiers = [
     'License :: OSI Approved :: BSD License',
     'Operating System :: OS Independent',
     'Programming Language :: Python',
-    'Programming Language :: Python :: 2',
-    'Programming Language :: Python :: 2.7',
-    'Programming Language :: Python :: 3',
-    'Programming Language :: Python :: 3.7',
-    'Programming Language :: Python :: 3.8',
+    'Programming Language :: Python :: 3 :: Only',
     'Programming Language :: Python :: 3.9',
     'Topic :: Multimedia :: Graphics',
     'Topic :: Scientific/Engineering :: Visualization',

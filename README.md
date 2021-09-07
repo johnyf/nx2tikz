@@ -113,8 +113,6 @@ This script can be invoked from the command line, for example:
 nx2tikz -h
 ```
 
-If you are using Python 2, then install `networkx <= 2.2`,
-because newer `networkx` versions support only Python 3.
 
 
 References
