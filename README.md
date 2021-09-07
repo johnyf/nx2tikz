@@ -114,7 +114,6 @@ nx2tikz -h
 ```
 
 
-
 References
 ==========
 
