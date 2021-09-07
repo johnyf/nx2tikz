@@ -3,7 +3,6 @@ import argparse
 import subprocess
 
 
-
 def dumps_tikz(g, layout='layered', use_label=True):
     """Return TikZ code as `str` for `networkx` graph `g`."""
     if layout not in ('layered', 'spring'):
