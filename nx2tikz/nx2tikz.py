@@ -2,7 +2,6 @@
 import argparse
 import subprocess
 
-from networkx import is_directed
 
 
 def dumps_tikz(g, layout='layered', use_label=True):
@@ -24,7 +23,7 @@ def dumps_tikz(g, layout='layered', use_label=True):
         # pack them
         s += '{n}{style};\n'.format(n=n, style=style)
     s += '\n'
-    if is_directed(g):
+    if g.is_directed():
         line = ' -> '
     else:
         line = ' -- '
