@@ -1,4 +1,6 @@
 """Installation script."""
+import os
+
 from setuptools import setup
 import warnings
 
@@ -6,12 +8,6 @@ import warnings
 README = 'README.md'
 NAME = 'nx2tikz'
 DESCRIPTION = 'Export NetworkX graphs to TikZ.'
-try:
-    with open('README.md') as f:
-        long_description = f.read()
-except FileNotFoundError:
-    long_description = ''
-    warnings.warn(f'Could not find {README}')
 url = f'https://github.com/johnyf/{NAME}'
 VERSION_FILE = f'{NAME}/_version.py'
 MAJOR = 0
@@ -42,6 +38,7 @@ def run_setup():
     s = VERSION_TEXT.format(version=VERSION)
     with open(VERSION_FILE, 'w') as f:
         f.write(s)
+    long_description = _long_description()
     setup(
         name=NAME,
         version=VERSION,
@@ -62,6 +59,16 @@ def run_setup():
             'tikz', 'pgf', 'networkx', 'tex', 'latex', 'luatex',
             'lualatex', 'graph'],
         classifiers=CLASSIFIERS)
+
+
+def _long_description():
+    """Return contents of README file."""
+    if not os.path.isfile(README):
+        warnings.warn(
+            f'Did not find file `{README}`')
+        return ''
+    with open(README) as f:
+        return f.read()
 
 
 if __name__ == '__main__':
