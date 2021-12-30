@@ -1,8 +1,8 @@
 """Installation script."""
 import os
+import warnings
 
 from setuptools import setup
-import warnings
 
 
 README = 'README.md'
