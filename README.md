@@ -19,8 +19,8 @@ These are possible via two interfaces:
 - from the command line, by passing the name of a Python script that contains
   a function that returns a `networkx` graph
 
-The purpose of package `nx2tikz` is to avoid the
-[`pydot`](https://pypi.org/project/pydot/) ->
+The purpose of package `nx2tikz` is to avoid the:
+dump DOT file ->
 [`GraphViz`](https://en.wikipedia.org/wiki/PGF/TikZ) ->
 [`dot2tex`](https://github.com/kjellmf/dot2tex) ->
 [`dot2texi`](https://github.com/kjellmf/dot2texisty) toolchain,
