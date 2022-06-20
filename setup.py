@@ -2,7 +2,7 @@
 import os
 import warnings
 
-from setuptools import setup
+import setuptools
 
 
 README = 'README.md'
@@ -37,7 +37,7 @@ def run_setup():
     with open(VERSION_FILE, 'w') as f:
         f.write(s)
     long_description = _long_description()
-    setup(
+    setuptools.setup(
         name=NAME,
         version=VERSION,
         license='BSD',
