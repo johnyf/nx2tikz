@@ -10,10 +10,7 @@ NAME = 'nx2tikz'
 DESCRIPTION = 'Export NetworkX graphs to TikZ.'
 url = f'https://github.com/johnyf/{NAME}'
 VERSION_FILE = f'{NAME}/_version.py'
-MAJOR = 0
-MINOR = 2
-MICRO = 0
-VERSION = f'{MAJOR}.{MINOR}.{MICRO}'
+VERSION = '0.2.0'
 VERSION_TEXT = (
     '# This file was generated from setup.py\n'
     "version = '{version}'\n")
