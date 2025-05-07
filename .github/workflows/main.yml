@@ -23,6 +23,7 @@ jobs:
             - uses: actions/checkout@v4
             - name: Install APT packages
               run: |
+                sudo apt update
                 sudo apt install \
                     texlive \
                     texlive-latex-extra \
